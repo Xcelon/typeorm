@@ -473,10 +473,11 @@ export abstract class QueryBuilder<Entity> {
     }
 
     /**
-     * Cleans json syntax from column name
+     * Cleans json operator from column name
      */
     cleanJson(name: string): string {
-        return name.split('->')[0];
+        const [column] = name.split("->");
+        return column;
     }
 
     /**
