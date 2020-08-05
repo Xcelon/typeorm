@@ -473,6 +473,13 @@ export abstract class QueryBuilder<Entity> {
     }
 
     /**
+     * Cleans json syntax from column name
+     */
+    cleanJson(name: string): string {
+        return name.split('->')[0];
+    }
+
+    /**
      * Sets or overrides query builder's QueryRunner.
      */
     setQueryRunner(queryRunner: QueryRunner): this {
